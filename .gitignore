@@ -1,0 +1,120 @@
+# General OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+.venv/
+env/
+ENV/
+pip-wheel-metadata/
+*.egg-info/
+
+# Java / Gradle / Maven
+/target/
+/build/
+.gradle/
+/.mvn/
+*.class
+*.jar
+*.war
+
+# Go
+bin/
+
+# Rust
+/target/
+
+# Logs and runtime files
+*.log
+logs/
+tmp/
+temp/
+*.pid
+
+# Docker
+docker-compose.override.yml
+**/Dockerfile.*.local
+docker-context/
+
+# Kubernetes and kubeconfig (don't commit cluster credentials)
+.kube/
+**/kubeconfig
+kubeconfig
+KUBECONFIG
+
+# Helm / charts
+.helm/
+charts/*.tgz
+charts/*.prov
+chart.lock
+helmfile.lock
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+crash.log
+override.tf
+override.tf.json
+terraform.tfvars
+secret.tfvars
+
+# Secrets and sensitive files
+.env
+.env.*
+secrets.yml
+secrets.yaml
+*.pem
+*.key
+*.p12
+*.crt
+
+# CI / build artifacts
+/dist/
+/out/
+/release/
+coverage/
+coverage-report/
+*.lcov
+junit-*.xml
+
+# Package manager locks (if you prefer to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Misc
+*.swp
+*~
+._*
+.cache/
+.serverless/
+
+# Local Helm/values or environment-specific files that shouldn't be committed
+values.local.*
+values.*.local
+*-values.yaml
+
+# Notes
+# - Keep this file project-specific: add or remove rules as you add technologies (e.g., add Python/Go/Node entries only if present)
