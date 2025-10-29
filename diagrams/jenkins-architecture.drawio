@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-10-29T12:00:00.000Z" agent="Jenkins on Wheels" etag="architecture" version="22.1.2">
+  <diagram name="Jenkins on Wheels Architecture" id="jenkins-architecture">
+    <mxGraphModel dx="1422" dy="834" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="Jenkins on Wheels - Production Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="569" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Internet Layer -->
+        <mxCell id="internet-box" value="Internet &amp; Users" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="80" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Load Balancer -->
+        <mxCell id="lb-box" value="Load Balancer&#xa;SSL Termination&#xa;WAF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="350" y="80" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Kubernetes Cluster Box -->
+        <mxCell id="k8s-cluster" value="Kubernetes Cluster" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=18;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="50" y="200" width="800" height="400" as="geometry" />
+        </mxCell>
+        
+        <!-- Jenkins Masters -->
+        <mxCell id="jenkins-ha" value="Jenkins Masters (HA)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="240" width="200" height="150" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="master1" value="Jenkins&#xa;Master 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="100" y="270" width="50" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="master2" value="Jenkins&#xa;Master 2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="160" y="270" width="50" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="master3" value="Jenkins&#xa;Master 3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="270" width="50" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Agent Pool -->
+        <mxCell id="agent-pool" value="Dynamic Agent Pool" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="320" y="240" width="200" height="150" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="java-agent" value="Java&#xa;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="340" y="270" width="40" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="docker-agent" value="Docker&#xa;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="390" y="270" width="40" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="node-agent" value="Node.js&#xa;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="440" y="270" width="40" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="python-agent" value="Python&#xa;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="340" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Storage -->
+        <mxCell id="storage" value="Storage Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="560" y="240" width="120" height="100" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="pv" value="Persistent&#xa;Volumes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="580" y="270" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="config" value="ConfigMaps" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="580" y="305" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Monitoring -->
+        <mxCell id="monitoring" value="Monitoring Stack" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="720" y="240" width="120" height="150" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="prometheus" value="Prometheus" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="740" y="270" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="grafana" value="Grafana" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="740" y="310" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="alertmanager" value="AlertManager" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="740" y="350" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Management Layer -->
+        <mxCell id="management" value="Management &amp; Automation Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="80" y="420" width="600" height="160" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="update-controller" value="Update&#xa;Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="120" y="460" width="80" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="plugin-manager" value="Plugin&#xa;Manager" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="220" y="460" width="80" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="helm-controller" value="Helm&#xa;Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="320" y="460" width="80" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="backup-restore" value="Backup &amp;&#xa;Restore" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="420" y="460" width="80" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="security-scanner" value="Security&#xa;Scanner" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="520" y="460" width="80" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- External Systems -->
+        <mxCell id="external" value="External Integrations" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="50" y="650" width="800" height="120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="git" value="Git Repos&#xa;(GitHub/GitLab)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="80" y="690" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="registry" value="Container&#xa;Registry" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="200" y="690" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="vault" value="HashiCorp&#xa;Vault" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="320" y="690" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="oidc" value="OIDC/SAML&#xa;Provider" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="440" y="690" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="artifact-store" value="Artifact&#xa;Storage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="560" y="690" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notification" value="Notification&#xa;Services" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="680" y="690" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrows -->
+        <mxCell id="arrow1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="internet-box" target="lb-box">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint" />
+            <mxPoint x="450" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="arrow2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="lb-box" target="jenkins-ha">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="400" as="sourcePoint" />
+            <mxPoint x="450" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
